@@ -1,0 +1,45 @@
+== Test SQL ==
+
+Partie 1
+
+1. 	SELECT * FROM wp_posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY post_date DESC;
+
+2. 	SELECT u.display_name, COUNT(p.ID) AS post_count FROM wp_posts p JOIN wp_users u ON p.post_author = u.ID
+	WHERE p.post_type = 'post' AND p.post_status = 'publish' GROUP BY p.post_author;
+
+3.	SELECT p.post_title, pm.meta_value FROM wp_posts p JOIN wp_postmeta pm ON p.ID = pm.post_id
+	WHERE p.post_type = 'post' AND p.post_status = 'publish' AND pm.meta_key = '_thumbnail_id';
+	
+Partie 2
+
+1.	SELECT p.ID, p.post_title, u.display_name, COUNT(pm.meta_id) AS meta_count FROM wp_posts p JOIN wp_users u ON p.post_author = u.ID
+	LEFT JOIN wp_postmeta pm ON p.ID = pm.post_id
+	WHERE p.post_type = 'post' AND p.post_status = 'publish' GROUP BY p.ID ORDER BY p.post_date DESC LIMIT 5;
+	
+2.	SELECT ID, post_title, post_date FROM wp_posts WHERE post_type = 'post'
+	AND post_status = 'publish' AND ( post_title LIKE '%WordPress%' OR post_content LIKE '%WordPress%' );
+	
+3.	SELECT u.ID, u.display_name FROM wp_users u LEFT JOIN wp_posts p ON u.ID = p.post_author AND p.post_type = 'post'
+	WHERE p.ID IS NULL;
+	
+	P.S : "WHERE p.ID IS NULL" => Bien obliger de reconnaitre que j'ai du me faire aider par Ia pour celle-ci !
+		Je n'avais en effet pas cette "articulation logique"...
+		
+Partie 3 :
+
+	Note : Je vais contourner la consigne car je ne sais pas du tout écrire une requète aussi longue...
+	Je n'ai jamais dans l'e-commerce eu l'occasion d'aller aussi loin dans le retour de données en une requète.
+	Il y a d'abord la complexité synthaxique mais surtout l'aspect non optimisé des ressources, surtout si la base de données
+	possède beaucoup de commandes...
+	
+	Donc je vais faire comme je sais le faire c'est à dire étape par étape, après chaque requète le retour de donnée me permettra
+	de faire la requète suivante :
+	
+	...
+	Après de nombreux essai infructueux... J'étais tenté de faire les calcul de panier moyen en php et autre donnée à raffiner à partir de la database 
+	(comme à mon habitude!) mais je ne parviens pas à réaliser cette dernière requète SQL...
+	
+	Et lorsque j'utilise une IA pour voir ce que cela donne, honnètement la synthaxe me dépasse complétement...
+	Donc autant s'arréter là que rendre quelque chose que je ne maitrise pas.
+	
+	Désolé pour ce retour vide...
