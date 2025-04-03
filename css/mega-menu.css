@@ -309,7 +309,7 @@ span.mm-btn-menu.active i {
         margin-right: 3%;
     }
     span.mm-section-content {
-        width: 75%;
+        width: 73%;
     }
 }
 @media (max-width: 996px) {
@@ -424,5 +424,11 @@ span.mm-btn-menu.active i {
 @media (max-width: 600px) {
     span.mm-section-selector {
         width: 20%;
+    }
+}
+@media (max-width: 550px) {
+    .mm-resp-menu .mm-contact-us a,
+    ul.mm-sub-menu p.mm-title-section {
+        font-size: 0.8em;
     }
 }
