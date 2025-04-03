@@ -333,7 +333,7 @@ span.mm-btn-menu.active i {
         margin-bottom: -1px;
     }
     .mm-resp-menu .mm-contact-us {
-        height: 34px;
+        height: 34.5px;
     }
     .mm-resp-menu .mm-contact-us,
     ul.mega-menu-list {
@@ -420,6 +420,9 @@ span.mm-btn-menu.active i {
         padding: 10px;
         margin: 0;
     }
+    .mm-resp-menu .mm-contact-us {
+        height: 32px;
+    }
 }
 @media (max-width: 600px) {
     span.mm-section-selector {
@@ -430,5 +433,9 @@ span.mm-btn-menu.active i {
     .mm-resp-menu .mm-contact-us a,
     ul.mm-sub-menu p.mm-title-section {
         font-size: 0.8em;
+    }
+    .mm-resp-menu .mm-contact-us {
+        width: 105px;
+        max-width: unset;
     }
 }
